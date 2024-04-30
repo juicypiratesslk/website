@@ -6,8 +6,8 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Evil Rabbit — Design',
-  description: 'Nicolas Garro, aka Evil Rabbit: Brand Architect at Vercel.',
+  title: 'Evil Rabbit',
+  description: 'Nicolas Garro, aka Evil Rabbit: Founding Designer — Brand Architect at Vercel.',
 }
 
 export default function RootLayout({
