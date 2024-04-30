@@ -5,12 +5,17 @@ import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// Assuming Metadata needs to be fully populated
+// Define the Metadata type with properties you are using
+interface Metadata {
+  title: string;
+  description: string;
+}
+
+// Now Metadata is defined and can be used for typing
 export const metadata: Metadata = {
   title: 'Evil Rabbit — Design',
   description: 'Nicolas Garro, aka Evil Rabbit: Founding Designer / Brand Architect at Vercel.',
   keywords: '', // Default value if needed
-  author: '', // Default value if needed
 };
 
 export default function RootLayout({
@@ -21,19 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>{metadata.title || 'Default Title'}</title>
-        <meta name="description" content={metadata.description || 'Default Description'} />
-        <meta name="keywords" content={metadata.keywords || 'Default Keywords'} />
-        <meta name="author" content={metadata.author || 'Default Author'} />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@evilrabbit_" />
         <meta name="twitter:creator" content="@evilrabbit_" />
-        <meta name="twitter:title" content={metadata.title || 'Default Twitter Title'} />
-        <meta name="twitter:description" content={metadata.description || 'Default Twitter Description'} />
+        <meta name="twitter:title" content="Evil Rabbit" />
+        <meta name="twitter:description" content="Nicolas Garro, aka Evil Rabbit: Founding Designer / Brand Architect at Vercel." />
         <meta name="twitter:image" content="https://dev.evilrabb.it/static/og-image.png" />
-        <meta property="og:title" content={metadata.title || 'Default OG Title'} />
+        <meta property="og:title" content="Evil Rabbit" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content={metadata.description || 'Default OG Description'} />
+        <meta property="og:description" content="Nicolas Garro, aka Evil Rabbit: Founding Designer / Brand Architect at Vercel." />
         <meta property="og:url" content="https://dev.evilrabb.it" />
         <meta property="og:image" content="https://dev.evilrabb.it/static/og-image.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
